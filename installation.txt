@@ -11,3 +11,7 @@ Libaries
 Adafruit Char Plate LCD
 
 http://cfedk.host.cs.st-andrews.ac.uk/site/?q=2013-pi
+
+
+list of stations 
+http://www.surfmusic.de/country/singapore.html
