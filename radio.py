@@ -118,7 +118,7 @@ refreshLCD()
 
 
 while True:
-    time.sleep(0.1)
+    time.sleep(0.1) #To debounce and prevent excessive CPU use
     if lcd.buttonPressed(lcd.UP):
       setNewVolume(True)
       refreshLCD()
