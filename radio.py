@@ -5,14 +5,13 @@ import shlex
 import re
 
 from time import sleep
-from subprocess import call
 from subprocess import Popen, PIPE
 from Adafruit_CharLCDPlate import Adafruit_CharLCDPlate
 
 stationFilename = "stations.txt"
 startPlayerCommand = "mplayer -cache-min 1 "  #minimim cache before start is 1% get started quickly
 startPlayerSuffixCommand = " </dev/null >/dev/null 2>&1 &"  #redirect to /dev/null as mplayer requires writing to stdout
-killPlayerCommand = ["killall", "mplayer"]
+killPlayerCommand = "killall mplayer"
 getMixerCommand = "amixer -sget PCM"
 findVolumeRegex = ".*Playback (.*)\[(.*)%\] \[(.*)\] \[(.*)\]"
 setVolumeCommand = "amixer -q set PCM "
@@ -59,10 +58,10 @@ def getVolume():
 
 def setVolumePercent(newVolume):
   setVolumeStr = setVolumeCommand + str(newVolume) + "%"
-  call(shlex.split(setVolumeStr))
+  os.system(setVolumeStr)
 
 def toggleMute():
-  call(shlex.split(toggleMuteCommand))
+  os.system(toggleMuteCommand)
 
 def refreshLCD():
 
@@ -93,7 +92,7 @@ def setNewVolume(increment):
   setVolumePercent(currentVolume)
 
 def goToStation():
-  call(killPlayerCommand)
+  os.system(killPlayerCommand)
   nextStationCommand = startPlayerCommand + stationsList[stationIndex][1] + startPlayerSuffixCommand
   print nextStationCommand
   os.system(nextStationCommand)
