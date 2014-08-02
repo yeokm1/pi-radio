@@ -11,7 +11,7 @@ from Adafruit_CharLCDPlate import Adafruit_CharLCDPlate
 
 stationFilename = "stations.txt"
 startPlayerCommand = "mplayer "
-startPlayerSuffixCommand = " </dev/null >/dev/null 2>&1 &"
+startPlayerSuffixCommand = " </dev/null >/dev/null 2>&1 &"  #redirect to /dev/null as mplayer requires writing to stdout
 killPlayerCommand = ["killall", "mplayer"]
 getMixerCommand = "amixer -sget PCM"
 findVolumeRegex = ".*Playback (.*)\[(.*)%\] \[(.*)\] \[(.*)\]"
