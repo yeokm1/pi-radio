@@ -7,7 +7,7 @@ A Python program will use mplayer to play the correct audio stream based on your
 Hardware
 ====
 1. Raspberry Pi Model B (other models may also work)
-2. Adafruit i2c 16x2 LCD Pi Plate
+2. Adafruit i2c 16x2 LCD Pi Plate with keypad
 
 Dependencies
 =====
@@ -39,6 +39,16 @@ Running the app
 python2 radio.py
 ```
 
+Radio stations
+=====
+
+Details on radio stations are kept in the stations.txt file.  Majority of radio stations in Singapore are supported except for 88.3 Jia and Power 98 as I cannot find their online streams.
+
+
+References and Libraries
+=====
+1. [Adafruit Char Plate LCD](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/overview)
+2. [i2c setup on Arch Linux](http://cfedk.host.cs.st-andrews.ac.uk/site/?q=2013-pi)
 
 
 
