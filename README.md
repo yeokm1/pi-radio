@@ -33,12 +33,14 @@ reboot
 ## Running the app
 
 ```bash
+git clone https://github.com/yeokm1/pi-radio.git
+cd pi-radio
 python2 radio.py
 ```
 
 ## Radio stations
 
-Details on radio stations are kept in the stations.txt file.  Majority of radio stations in Singapore are supported except for 88.3 Jia and Power 98 as I cannot find their online streams.
+Details on radio stations are kept in the `stations.txt` file.  Majority of radio stations in Singapore are supported except for 88.3 Jia and Power 98 as I cannot find their online streams. You can modify `stations.txt` to include your own stations
 
 
 ## Start on boot
