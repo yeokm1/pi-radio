@@ -41,6 +41,31 @@ python2 radio.py
 Details on radio stations are kept in the stations.txt file.  Majority of radio stations in Singapore are supported except for 88.3 Jia and Power 98 as I cannot find their online streams.
 
 
+## Start on boot
+
+We need to write a systemd service for Arch Linux to launch this app. 
+
+```bash
+nano /etc/systemd/system/pi-radio.service
+
+#Add the following lines to pi-radio.service till but not including #end
+[Unit]
+Description=To start pi-radio on startup
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=idle
+RemainAfterExit=yes
+ExecStart=python2 /root/radio.py
+#end
+
+systemctl enable pi-radio.service
+```
+
+
 ## Convert to a read-only file system (Optional)
 
 Unlike your typical computer where you usually shutdown properly, I cannot rely on this during the use of a Raspberry Pi. If the Raspberry Pi is improperly shutdown too many times, data corruption in the file system leading to unbootable SD card may result. So we should use a read-only file system.
@@ -89,7 +114,7 @@ reboot
 ```
 
 
-To enable read-write temoporarily to do say an update, just run `./readwrite.sh` .
+To enable read-write temporarily to do say an update, just run `./readwrite.sh` .
 
 
 
