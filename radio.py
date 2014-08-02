@@ -9,8 +9,6 @@ from subprocess import call
 from subprocess import Popen, PIPE
 from Adafruit_CharLCDPlate import Adafruit_CharLCDPlate
 
-
-debounceTime = 150
 stationFilename = "stations.txt"
 startPlayer = "mplayer "
 killPlayerCommand = ["killall mplayer"]
@@ -44,16 +42,6 @@ for line in lines:
 
 def getTime():
   return int(round(time.time() * 1000))
-
-def shouldIProcessThisPress():
-  global previousPressedTime
-  currentTime = getTime()
-  timeDifference = currentTime - previousPressedTime
-  if timeDifference > debounceTime:
-    previousPressedTime = currentTime
-    return True
-  else:
-    return False
 
 def getStdout(cmd):
     args = shlex.split(cmd)
@@ -115,7 +103,6 @@ def setNextStation(increment):
 
 
 
-
 currentVolume = int(getVolume()[0])
 
 previousPressedTime = getTime()
@@ -123,19 +110,20 @@ refreshLCD()
 
 
 while True:
-    if lcd.buttonPressed(lcd.UP) and shouldIProcessThisPress():
+    time.sleep(0.1)
+    if lcd.buttonPressed(lcd.UP):
       setNewVolume(True)
       refreshLCD()
-    elif lcd.buttonPressed(lcd.DOWN) and shouldIProcessThisPress():
+    elif lcd.buttonPressed(lcd.DOWN):
       setNewVolume(False)
       refreshLCD()
-    elif lcd.buttonPressed(lcd.SELECT) and shouldIProcessThisPress():
+    elif lcd.buttonPressed(lcd.SELECT):
       toggleMute()
       refreshLCD()
-    elif lcd.buttonPressed(lcd.LEFT) and shouldIProcessThisPress():
+    elif lcd.buttonPressed(lcd.LEFT):
       setNextStation(False)
       refreshLCD()
-    elif lcd.buttonPressed(lcd.RIGHT) and shouldIProcessThisPress():
+    elif lcd.buttonPressed(lcd.RIGHT):
       setNextStation(True)
       refreshLCD()
 
