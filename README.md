@@ -47,12 +47,11 @@ Details on radio stations are kept in the stations.txt file.  Majority of radio 
 Convert to a read-only file system (Optional)
 =====
 
-Unlike your typical computer where you usually shutdown properly, I cannot rely gurantee this during the use of a Raspberry Pi. If the Raspberry Pi is improperly shutdown too many times, data corruption in the file system leading to unbootable SD card may result. So we should use a read-only file system.
+Unlike your typical computer where you usually shutdown properly, I cannot rely on this during the use of a Raspberry Pi. If the Raspberry Pi is improperly shutdown too many times, data corruption in the file system leading to unbootable SD card may result. So we should use a read-only file system.
 
 Full instructions and explanations are obtained from this [link](http://ruiabreu.org/2013-06-02-booting-raspberry-pi-in-readonly.html) but you can run this commands directly. I modified some of the instructions for personal convenience.
 
 ```bash
-
 #Change timezone.
 rm /etc/localtime
 ln -s /usr/share/zoneinfo/Asia/Singapore /etc/localtime
@@ -77,7 +76,7 @@ systemctl disable systemd-readahead-collect
 systemctl disable systemd-random-seed
 systemctl disable ntpd
 
-#Put shortcut shell scripts to renable read-write temporarily
+#Put shortcut shell scripts to re-enable read-write temporarily if needed
 printf "mount -o remount,rw /" > readwrite.sh
 printf "mount -o remount,ro /" > readonly.sh
 chmod 500 readwrite.sh
