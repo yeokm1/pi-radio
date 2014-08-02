@@ -84,6 +84,8 @@ chmod 500 readonly.sh
 
 #Remove history
 history -c -w
+
+reboot
 ```
 
 
