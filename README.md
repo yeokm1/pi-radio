@@ -122,9 +122,7 @@ history -c -w
 reboot
 ```
 
-
-To enable read-write temporarily to do say an update, just run `./readwrite.sh` .
-
+To enable read-write temporarily to do say an update, just run `./readwrite.sh` . Volume changes do not persist if a read-only file system is used. To change volume permanently, set to read-write, change to desired volume then reboot.
 
 
 ## References and Libraries
