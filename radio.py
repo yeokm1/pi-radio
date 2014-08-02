@@ -10,8 +10,9 @@ from subprocess import Popen, PIPE
 from Adafruit_CharLCDPlate import Adafruit_CharLCDPlate
 
 stationFilename = "stations.txt"
-startPlayer = "mplayer "
-killPlayerCommand = ["killall mplayer"]
+startPlayerCommand = "mplayer "
+startPlayerSuffixCommand = " </dev/null >/dev/null 2>&1 &"
+killPlayerCommand = ["killall", "mplayer"]
 getMixerCommand = "amixer -sget PCM"
 findVolumeRegex = ".*Playback (.*)\[(.*)%\] \[(.*)\] \[(.*)\]"
 setVolumeCommand = "amixer -q set PCM "
@@ -100,6 +101,13 @@ def setNextStation(increment):
     stationIndex -= 1
 
   stationIndex %= numStations
+
+  call(killPlayerCommand)
+
+  nextStationCommand = startPlayerCommand + stationsList[stationIndex][1] + startPlayerSuffixCommand
+  os.system(nextStationCommand)
+
+
 
 
 
