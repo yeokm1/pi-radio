@@ -29,7 +29,6 @@ pip2 install smbus
 modprobe i2c-dev
 echo "i2c-dev" > /etc/modules-load.d/i2c-dev.conf
 reboot
-
 ```
 
 Running the app
@@ -43,6 +42,54 @@ Radio stations
 =====
 
 Details on radio stations are kept in the stations.txt file.  Majority of radio stations in Singapore are supported except for 88.3 Jia and Power 98 as I cannot find their online streams.
+
+
+Convert to a read-only file system (Optional)
+=====
+
+Unlike your typical computer where you usually shutdown properly, I cannot rely gurantee this during the use of a Raspberry Pi. If the Raspberry Pi is improperly shutdown too many times, data corruption in the file system leading to unbootable SD card may result. So we should use a read-only file system.
+
+Full instructions and explanations are obtained from this [link](http://ruiabreu.org/2013-06-02-booting-raspberry-pi-in-readonly.html) but you can run this commands directly. I modified some of the instructions for personal convenience.
+
+```bash
+
+#Change timezone.
+rm /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Singapore /etc/localtime
+
+#Update everything first, remove cache then reboot to detect problems
+pacman -Syu  
+pacman -Sc
+reboot
+
+#Relocate DNS cache
+rm /etc/resolv.conf
+ln -s /tmp/resolv.conf /etc/resolv.conf
+
+#Adjust /etc/fstab, add/modify to the following hashed lines.
+nano /etc/fstab
+#/dev/mmcblk0p1  /boot   vfat    defaults,ro,errors=remount-ro        0       0
+#tmpfs   /var/log    tmpfs   nodev,nosuid    0   0
+#tmpfs   /var/tmp    tmpfs   nodev,nosuid    0   0
+
+#Disable systemd services
+systemctl disable systemd-readahead-collect
+systemctl disable systemd-random-seed
+systemctl disable ntpd
+
+#Put shortcut shell scripts to renable read-write temporarily
+printf "mount -o remount,rw /" > readwrite.sh
+printf "mount -o remount,ro /" > readonly.sh
+chmod 500 readwrite.sh
+chmod 500 readonly.sh
+
+#Remove history
+history -c -w
+```
+
+
+To enable read-write temoporarily to do say an update, just run `./readwrite.sh` .
+
 
 
 References and Libraries
