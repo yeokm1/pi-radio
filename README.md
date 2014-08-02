@@ -22,7 +22,7 @@ Raspberry Pi internet radio streamer for Singapore. Can be modified to stream ot
 I use Arch Linux as it is stripped down and boots up far faster than Raspbian. With some modifications to the setup instructions, you can run this on Raspbian as well.
 
 ```bash
-pacman -Syu python2 python2-pip base-devel git mplayer alsa-utils
+pacman -Syu python2 python2-pip base-devel git mplayer alsa-utils i2c-tools
 pip2 install smbus
 
 modprobe i2c-dev
