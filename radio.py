@@ -129,7 +129,7 @@ refreshLCD()
 
 while True:
     time.sleep(0.1) #To debounce and prevent excessive CPU use
-    if lcd.buttonPressed(lcd.LEFT) and lcd.buttonPressed(lcd.RIGHT)
+    if lcd.buttonPressed(lcd.LEFT) and lcd.buttonPressed(lcd.RIGHT):
       showIPAddress()
     elif lcd.buttonPressed(lcd.UP):
       setNewVolume(True)
