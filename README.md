@@ -52,13 +52,13 @@ nano /etc/systemd/system/pi-radio.service
 #Add the following lines to pi-radio.service till but not including #end
 [Unit]
 Description=To start pi-radio on startup
-After=network.target
+After=network-online.target
 
 [Install]
 WantedBy=multi-user.target
 
 [Service]
-Type=idle
+Type=oneshot
 RemainAfterExit=yes
 ExecStart=/root/pi-radio/startup.sh
 #end
