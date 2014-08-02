@@ -10,7 +10,7 @@ from subprocess import Popen, PIPE
 from Adafruit_CharLCDPlate import Adafruit_CharLCDPlate
 
 stationFilename = "stations.txt"
-startPlayerCommand = "mplayer "
+startPlayerCommand = "mplayer -cache-min 1 "  #minimim cache before start is 1% get started quickly
 startPlayerSuffixCommand = " </dev/null >/dev/null 2>&1 &"  #redirect to /dev/null as mplayer requires writing to stdout
 killPlayerCommand = ["killall", "mplayer"]
 getMixerCommand = "amixer -sget PCM"
