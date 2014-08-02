@@ -8,6 +8,8 @@ Raspberry Pi internet radio streamer for Singapore. Can be modified to stream ot
 2. Volume control
 3. Shows IP address when left and right buttons are pressed
 4. Better sound quality compared to a typical FM radio!
+5. (Optional) Starts on boot, waits for internet connection before playing
+6. (Optional) Don't need to shutdown properly. Read-only file system prevents data corruption when powered off incorrectly.
 
 
 ## Hardware
