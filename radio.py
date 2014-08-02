@@ -10,14 +10,14 @@ from subprocess import Popen, PIPE
 from Adafruit_CharLCDPlate import Adafruit_CharLCDPlate
 
 
-debounceTime = 100
+debounceTime = 150
 stationFilename = "stations.txt"
 startPlayer = "mplayer "
 killPlayerCommand = ["killall mplayer"]
-getMixerCommand = "amixer sget PCM"
+getMixerCommand = "amixer -sget PCM"
 findVolumeRegex = ".*Playback (.*)\[(.*)%\] \[(.*)\] \[(.*)\]"
-setVolumeCommand = "amixer set PCM "
-toggleMuteCommand = "amixer set PCM toggle"
+setVolumeCommand = "amixer -q set PCM "
+toggleMuteCommand = "amixer -q set PCM toggle"
 
 
 regex = re.compile(findVolumeRegex)
@@ -25,6 +25,7 @@ regex = re.compile(findVolumeRegex)
 stationsList = []
 lcd = Adafruit_CharLCDPlate()
 stationIndex = 0
+numStations = None
 
 
 lcd.clear()
@@ -33,6 +34,8 @@ lcd.clear()
 stationsFile = open(stationFilename, 'r')
 lines = stationsFile.read().splitlines()
 stationsFile.close()
+
+numStations = len(lines)
 
 for line in lines:
     splitLine = line.split(" | ")
@@ -72,10 +75,6 @@ def setVolumePercent(newVolume):
 def toggleMute():
   call(shlex.split(toggleMuteCommand))
 
-
-currentVolume = int(getVolume()[0])
-
-
 def refreshLCD():
 
   volumePercent, soundStatus = getVolume()
@@ -105,9 +104,19 @@ def setNewVolume(increment):
   setVolumePercent(currentVolume)
 
 
+def setNextStation(increment):
+  global stationIndex
+  if increment:
+    stationIndex += 1
+  else:
+    stationIndex -= 1
+
+  stationIndex %= numStations
 
 
 
+
+currentVolume = int(getVolume()[0])
 
 previousPressedTime = getTime()
 refreshLCD()
@@ -123,10 +132,14 @@ while True:
     elif lcd.buttonPressed(lcd.SELECT) and shouldIProcessThisPress():
       toggleMute()
       refreshLCD()
-    # elif lcd.buttonPressed(lcd.RIGHT) and shouldIProcessThisPress():
-    #   restartNodeWithThisNumber(busNumber)
-    # elif lcd.buttonPressed(lcd.SELECT) and shouldIProcessThisPress():
-    #   shutdown()
+    elif lcd.buttonPressed(lcd.LEFT) and shouldIProcessThisPress():
+      setNextStation(False)
+      refreshLCD()
+    elif lcd.buttonPressed(lcd.RIGHT) and shouldIProcessThisPress():
+      setNextStation(True)
+      refreshLCD()
+
+
 
 
   
