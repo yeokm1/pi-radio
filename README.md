@@ -22,7 +22,7 @@ A Python program will use mplayer to play the correct audio stream based on your
 I use Arch Linux as it is stripped down and boots up far faster than Raspbian. With some modifications to the setup instructions, you can run this on Raspbian as well.
 
 ```bash
-pacman -Syu python2 python2-pip base-devel mplayer alsa-utils
+pacman -Syu python2 python2-pip base-devel git mplayer alsa-utils
 pip2 install smbus
 
 modprobe i2c-dev
