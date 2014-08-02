@@ -23,7 +23,7 @@ regex = re.compile(findVolumeRegex)
 
 stationsList = []
 lcd = Adafruit_CharLCDPlate()
-stationIndex = 0
+stationIndex = 2  #I want to play my third station be default
 numStations = None
 
 
