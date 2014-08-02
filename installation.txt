@@ -5,6 +5,7 @@ pip2 install smbus
 
 modprobe i2c-dev
 echo "i2c-dev" > /etc/modules-load.d/i2c-dev.conf
+python2 radio.py
 
 
 Libaries
@@ -12,6 +13,4 @@ Adafruit Char Plate LCD
 
 http://cfedk.host.cs.st-andrews.ac.uk/site/?q=2013-pi
 
-
-list of stations 
-http://www.surfmusic.de/country/singapore.html
+jia and power 98 cannot find the links

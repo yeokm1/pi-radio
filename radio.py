@@ -92,6 +92,11 @@ def setNewVolume(increment):
 
   setVolumePercent(currentVolume)
 
+def goToStation():
+  call(killPlayerCommand)
+  nextStationCommand = startPlayerCommand + stationsList[stationIndex][1] + startPlayerSuffixCommand
+  print nextStationCommand
+  os.system(nextStationCommand)
 
 def setNextStation(increment):
   global stationIndex
@@ -101,14 +106,12 @@ def setNextStation(increment):
     stationIndex -= 1
 
   stationIndex %= numStations
-
-  call(killPlayerCommand)
-
-  nextStationCommand = startPlayerCommand + stationsList[stationIndex][1] + startPlayerSuffixCommand
-  os.system(nextStationCommand)
+  goToStation()
 
 
 
+
+goToStation()
 
 
 currentVolume = int(getVolume()[0])

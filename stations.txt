@@ -1,2 +1,15 @@
+Ria 89.7 | http://mediacorp.rastream.com/897fm
+Gold 90.5 FM | http://mediacorp.rastream.com/905fm
 91.3 Hot FM | http://sph.rastream.com/913fm
-93.8 Live | http://103.21.81.3:8938
+Kiss 92.0 | http://sph.rastream.com/sph-kiss92
+Symphony 92.4 | http://mediacorp.rastream.com/924fm
+Yes 93.3 | http://mediacorp.rastream.com/933fm
+93.8 Live | http://mediacorp.rastream.com/938fm
+Warna 94.2 | http://mediacorp.rastream.com/94.2
+Class 95.0 | http://mediacorp.rastream.com/950fm
+95.8 Capital | http://mediacorp.rastream.com/958fm
+XFM 96.3 | http://mediacorp.rastream.com/963fm
+Love 97.2 | http://mediacorp.rastream.com/972fm
+98.7 FM | http://mediacorp.rastream.com/987fm
+Lush 99.5 | http://mediacorp.rastream.com/995fm
+UFM 100.3 | http://sph.rastream.com/1003fm
