@@ -4,7 +4,7 @@ pi-radio
 Raspberry Pi internet radio streamer for Singapore. Can be modified to stream other internet radio stations. A Python program will use mplayer to play the correct audio stream based on your button selection. 
 
 ##Features
-1. Supports most radio stations with online audio streams
+1. Supports most Singaporean radio stations with online audio streams
 2. Volume control
 3. Shows IP address when left and right buttons are pressed
 4. Better sound quality compared to a typical FM radio!
