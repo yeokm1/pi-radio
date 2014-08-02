@@ -60,7 +60,7 @@ WantedBy=multi-user.target
 [Service]
 Type=idle
 RemainAfterExit=yes
-ExecStart=python2 /root/radio.py
+ExecStart=/root/pi-radio/startup.sh
 #end
 
 systemctl enable pi-radio.service
