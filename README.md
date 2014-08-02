@@ -43,7 +43,7 @@ python2 radio.py
 Details on radio stations are kept in the `stations.txt` file.  Majority of radio stations in Singapore are supported except for 88.3 Jia and Power 98 as I cannot find their online streams. You can modify `stations.txt` to include your own stations.
 
 
-## Start on boot
+## Start on boot (Optional)
 
 We need to write a systemd service for Arch Linux to launch this app. 
 
