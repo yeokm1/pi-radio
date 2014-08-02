@@ -1,7 +1,7 @@
 pi-radio
 ========
 
-A Python program will use mplayer to play the correct audio stream based on your selection. Volume and radio stations can me changed via the buttons on the Pi plate.
+A Python program will use mplayer to play the correct audio stream based on your selection. Volume and radio stations can be changed via the buttons on the Pi plate.
 
 
 Hardware
