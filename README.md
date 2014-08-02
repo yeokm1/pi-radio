@@ -65,11 +65,15 @@ reboot
 rm /etc/resolv.conf
 ln -s /tmp/resolv.conf /etc/resolv.conf
 
-#Adjust /etc/fstab, add/modify to the following hashed lines.
+#Adjust /etc/fstab, add/modify to the following hashed lines. Mount certain directories to RAM disk.
 nano /etc/fstab
 #/dev/mmcblk0p1  /boot   vfat    defaults,ro,errors=remount-ro        0       0
 #tmpfs   /var/log    tmpfs   nodev,nosuid    0   0
 #tmpfs   /var/tmp    tmpfs   nodev,nosuid    0   0
+
+#To mount / partition as read-only
+nano /boot/cmdline.txt
+#Add an ro flag right after the root= parameter.
 
 #Disable systemd services
 systemctl disable systemd-readahead-collect
