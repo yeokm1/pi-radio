@@ -22,8 +22,7 @@ Raspberry Pi internet radio streamer for Singapore. Can be modified to stream ot
 I use Arch Linux as it is stripped down and boots up far faster than Raspbian. With some modifications to the setup instructions, you can run this on Raspbian as well.
 
 ```bash
-pacman -Syu python2 python2-pip base-devel git mplayer alsa-utils
-pip2 install smbus
+pacman -Syu python2 base-devel git mplayer alsa-utils i2c-tools
 
 modprobe i2c-dev
 echo "i2c-dev" > /etc/modules-load.d/i2c-dev.conf
@@ -43,7 +42,7 @@ python2 radio.py
 Details on radio stations are kept in the `stations.txt` file.  Majority of radio stations in Singapore are supported except for 88.3 Jia and Power 98 as I cannot find their online streams. You can modify `stations.txt` to include your own stations.
 
 
-## Start on boot
+## Start on boot (Optional)
 
 We need to write a systemd service for Arch Linux to launch this app. 
 
