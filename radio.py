@@ -3,6 +3,7 @@ import time
 import os
 import shlex
 import re
+import socket
 
 from time import sleep
 from subprocess import Popen, PIPE
@@ -108,6 +109,13 @@ def setNextStation(increment):
   goToStation()
 
 
+def getIPAddress():
+  return socket.gethostbyname(socket.gethostname())
+
+def showIPAddress():
+  ipAddr = getIPAddress()
+  lcd.clear()
+  lcd.message(ipAddr)
 
 
 goToStation()
@@ -121,7 +129,9 @@ refreshLCD()
 
 while True:
     time.sleep(0.1) #To debounce and prevent excessive CPU use
-    if lcd.buttonPressed(lcd.UP):
+    if lcd.buttonPressed(lcd.LEFT) and lcd.buttonPressed(lcd.RIGHT)
+      showIPAddress()
+    elif lcd.buttonPressed(lcd.UP):
       setNewVolume(True)
       refreshLCD()
     elif lcd.buttonPressed(lcd.DOWN):
