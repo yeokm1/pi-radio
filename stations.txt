@@ -5,7 +5,7 @@ Kiss 92.0 | http://sph.rastream.com/sph-kiss92
 Symphony 92.4 | http://mediacorp.rastream.com/924fm
 Yes 93.3 | http://mediacorp.rastream.com/933fm
 93.8 Live | http://mediacorp.rastream.com/938fm
-Warna 94.2 | http://mediacorp.rastream.com/94.2
+Warna 94.2 | http://mediacorp.rastream.com/942fm
 Class 95.0 | http://mediacorp.rastream.com/950fm
 95.8 Capital | http://mediacorp.rastream.com/958fm
 XFM 96.3 | http://mediacorp.rastream.com/963fm
