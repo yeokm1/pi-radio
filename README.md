@@ -1,7 +1,15 @@
 pi-radio
 ========
 
-Raspberry Pi internet radio streamer for Singapore. Can be modified to stream other internet radio stations. A Python program will use mplayer to play the correct audio stream based on your button selection. Volume and radio stations can be changed via the buttons on the Pi plate.
+Raspberry Pi internet radio streamer for Singapore. Can be modified to stream other internet radio stations. A Python program will use mplayer to play the correct audio stream based on your button selection. 
+
+##Features
+1. Supports most Singaporean radio stations with online audio streams
+2. Volume control
+3. Shows IP address when left and right buttons are pressed
+4. Better sound quality compared to a typical FM radio!
+6. (Optional) Starts on boot, waits for internet connection before playing. Ready to play in about 30 seconds.
+7. (Optional) Don't need to shutdown properly. Read-only file system prevents data corruption when powered off incorrectly.
 
 
 ## Hardware
@@ -114,9 +122,7 @@ history -c -w
 reboot
 ```
 
-
-To enable read-write temporarily to do say an update, just run `./readwrite.sh` .
-
+To enable read-write temporarily to do say an update, just run `./readwrite.sh` . Volume changes do not persist if a read-only file system is used. To change volume permanently, set to read-write, change to desired volume then reboot.
 
 
 ## References and Libraries
