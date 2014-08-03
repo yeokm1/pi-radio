@@ -28,7 +28,7 @@ Hate the complication of configuring static IP address and remembering it. Just 
 1. Supports most Singaporean radio stations with online audio streams
 2. Volume control
 3. Shows IP address when left and right buttons are pressed
-4. Better sound quality compared to a typical FM radio!
+4. Better sound quality compared to a typical FM radio
 6. (Optional) Starts on boot, waits for internet connection before playing. Ready to play in about 30 seconds.
 7. (Optional) Don't need to shutdown properly. Read-only file system prevents data corruption when powered off incorrectly.
 
@@ -100,7 +100,7 @@ systemctl enable pi-radio.service
 
 Unlike your typical computer where you usually shutdown properly, I cannot rely on this during the use of a Raspberry Pi. If the Raspberry Pi is improperly shutdown too many times, data corruption in the file system leading to unbootable SD card may result. So we should use a read-only file system.
 
-Full instructions and explanations are obtained from this [link](http://ruiabreu.org/2013-06-02-booting-raspberry-pi-in-readonly.html) but you can run this commands directly. I modified some of the instructions for personal convenience.
+Full instructions and explanations are obtained from this [link](http://ruiabreu.org/2013-06-02-booting-raspberry-pi-in-readonly.html) but you can run these commands directly. I modified some of the instructions for personal convenience.
 
 ```bash
 #Change timezone.
@@ -150,6 +150,7 @@ To enable read-write temporarily to do say an update, just run `./readwrite.sh` 
 
 1. [Adafruit Char Plate LCD](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/overview)
 2. [i2c setup on Arch Linux](http://cfedk.host.cs.st-andrews.ac.uk/site/?q=2013-pi)
+3. [Read-only file system](http://ruiabreu.org/2013-06-02-booting-raspberry-pi-in-readonly.html)
 
 
 
