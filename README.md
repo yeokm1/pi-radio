@@ -97,64 +97,10 @@ systemctl enable pi-radio.service
 
 
 ## Convert to a read-only file system (Optional)
-
-Unlike your typical computer where you usually shutdown properly, I cannot rely on this during the use of a Raspberry Pi. If the Raspberry Pi is improperly shutdown too many times, data corruption in the file system leading to unbootable SD card may result. So we should use a read-only file system.
-
-Full instructions and explanations are obtained from this [link](http://ruiabreu.org/2013-06-02-booting-raspberry-pi-in-readonly.html) but you can run these commands directly. I modified some of the instructions for personal convenience.
-
-```bash
-#Change timezone.
-rm /etc/localtime
-ln -s /usr/share/zoneinfo/Asia/Singapore /etc/localtime
-
-#Update everything first, remove cache then reboot to detect problems
-pacman -Syu  
-pacman -Sc
-reboot
-
-#Relocate DNS cache
-rm /etc/resolv.conf
-ln -s /tmp/resolv.conf /etc/resolv.conf
-
-#Adjust /etc/fstab, add/modify to the following hashed lines. Mount certain directories to RAM disk.
-nano /etc/fstab
-#/dev/mmcblk0p1  /boot   vfat    defaults,ro,errors=remount-ro        0       0
-#tmpfs   /var/log    tmpfs   nodev,nosuid    0   0
-#tmpfs   /var/tmp    tmpfs   nodev,nosuid    0   0
-
-#To mount / partition as read-only
-nano /boot/cmdline.txt
-#Add an ro flag right after the root= parameter.
-
-#Disable systemd services
-systemctl disable systemd-readahead-collect
-systemctl disable systemd-random-seed
-systemctl disable ntpd
-
-#Put shortcut shell scripts to re-enable read-write temporarily if needed
-printf "mount -o remount,rw /" > readwrite.sh
-printf "mount -o remount,ro /" > readonly.sh
-chmod 500 readwrite.sh
-chmod 500 readonly.sh
-
-#Remove history
-history -c -w
-
-reboot
-```
-
-To enable read-write temporarily to do say an update, just run `./readwrite.sh` . Volume changes do not persist if a read-only file system is used. To change volume permanently, set to read-write, change to desired volume then reboot.
+Consult my [gist](https://gist.github.com/yeokm1/8b0ffc03e622ce011010). Volume changes do not persist if a read-only file system is used. To change volume permanently, set to read-write, change to desired volume then reboot.
 
 
 ## References and Libraries
 
 1. [Adafruit Char Plate LCD](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/overview)
 2. [i2c setup on Arch Linux](http://cfedk.host.cs.st-andrews.ac.uk/site/?q=2013-pi)
-3. [Read-only file system](http://ruiabreu.org/2013-06-02-booting-raspberry-pi-in-readonly.html)
-
-
-
-
-
-
-
