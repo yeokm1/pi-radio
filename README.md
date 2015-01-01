@@ -15,13 +15,13 @@ Problems of my FM radio set at my house's living room
 ## So my solution!
 
 ![Screen](/photos/typical.jpg)
-Currently selected station and volume level. With a 3D Printed case.
+Currently selected station and volume level. With a 3D printed case.
 
 ![Screen](/photos/muted.jpg)
-Muting is possible by pressing the "Select" button. Using the old blue case.
+Muting is possible by pressing the "Select" button. Old picture of the previous blue case.
 
 ![Screen](/photos/ipaddress.jpg)
-Hate the complication of configuring static IP address and remembering it. Just get it to display on demand! Useful for SSH purposes.
+Hate the complication of configuring static IP address and remembering it. Just get it to display on demand! Useful for SSH purposes. Old picture of the previous blue case.
 
 
 ## Features
