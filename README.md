@@ -15,10 +15,10 @@ Problems of my FM radio set at my house's living room
 ## So my solution!
 
 ![Screen](/photos/typical.jpg)
-Currently selected station and volume level
+Currently selected station and volume level. With a 3D Printed case.
 
 ![Screen](/photos/muted.jpg)
-Muting is possible by pressing the "Select" button
+Muting is possible by pressing the "Select" button. Using the old blue case.
 
 ![Screen](/photos/ipaddress.jpg)
 Hate the complication of configuring static IP address and remembering it. Just get it to display on demand! Useful for SSH purposes.
@@ -104,3 +104,4 @@ Consult my [gist](https://gist.github.com/yeokm1/8b0ffc03e622ce011010). Volume c
 
 1. [Adafruit Char Plate LCD](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/overview)
 2. [i2c setup on Arch Linux](http://cfedk.host.cs.st-andrews.ac.uk/site/?q=2013-pi)
+3. [3D case design](http://www.thingiverse.com/thing:101837)
