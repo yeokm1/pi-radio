@@ -60,7 +60,7 @@ reboot
 
 ##Use USB adapter instead of default audio output (optional)
 
-"Since the built-in audio out of the raspberry pi is only good for deaf people, it makes sense to remove it. Raspbian has a sysem that makes any usb audio the default one but arch linux doesn’t. Since we want it to work with anything we would plug into it, we’ll just get rid of the bcm2835 so it doesn’t get in our way. To do so, edit the file /etc/modules-load.d/raspberrypi.conf and remove / comment the bcm2835 related modules (bcm2708-rng, snd-bcm2835)"
+"Since the built-in audio out of the raspberry pi is only good for deaf people, it makes sense to remove it. Raspbian has a sysem that makes any usb audio the default one but arch linux doesn’t. Since we want it to work with anything we would plug into it, we’ll just get rid of the bcm2835 so it doesn’t get in our way. To do so, edit the file /etc/modules-load.d/raspberrypi.conf and remove / comment (use a #) the bcm2835 related modules (bcm2708-rng, snd-bcm2835)"
 
 From [here](http://www.marc-nostromo.com/installing-archlinux-on-raspberry-pi-for-headless-audio/)
 
