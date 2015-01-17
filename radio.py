@@ -13,10 +13,11 @@ stationFilename = "stations.txt"
 startPlayerCommand = "mplayer -cache-min 1 "  #minimum cache before start is 1% get started quickly
 startPlayerSuffixCommand = " </dev/null >/dev/null 2>&1 &"  #redirect to /dev/null as mplayer requires writing to stdout
 killPlayerCommand = "killall mplayer"
-getMixerCommand = "amixer -sget PCM"
+#Headphone can be replaced by "PCM" if you use the native Raspberry Pi audio out
+getMixerCommand = "amixer sget Headphone"
+setVolumeCommand = "amixer -q set Headphone "
+toggleMuteCommand = "amixer -q set Headphone toggle"
 findVolumeRegex = ".*Playback (.*)\[(.*)%\] \[(.*)\] \[(.*)\]"
-setVolumeCommand = "amixer -q set PCM "
-toggleMuteCommand = "amixer -q set PCM toggle"
 
 
 regex = re.compile(findVolumeRegex)
