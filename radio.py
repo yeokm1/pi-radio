@@ -10,7 +10,7 @@ from subprocess import Popen, PIPE
 from Adafruit_CharLCDPlate import Adafruit_CharLCDPlate
 
 stationFilename = "stations.txt"
-startPlayerCommand = "mplayer -cache-min 1 "  #minimum cache before start is 1% get started quickly
+startPlayerCommand = "mplayer -cache-min 2 "  #minimum cache before start is 2% to get started quickly. 1% fails sometimes.
 startPlayerSuffixCommand = " </dev/null >/dev/null 2>&1 &"  #redirect to /dev/null as mplayer requires writing to stdout
 killPlayerCommand = "killall mplayer"
 #Headphone can be replaced by "PCM" if you use the native Raspberry Pi audio out
