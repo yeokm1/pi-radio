@@ -58,9 +58,22 @@ echo "i2c-dev" > /etc/modules-load.d/i2c-dev.conf
 reboot
 ```
 
+On the latest versions of Arch Linux, it seems the i2c bus is disabled by default. We have to enable it. [Source](http://archlinuxarm.org/forum/viewtopic.php?f=31&t=8330)
+
+```bash
+nano /boot/config.txt
+
+#Add the following lines
+device_tree=bcm2709-rpi-2-b.dtb  #Replace this line with "bcm2708-rpi-b.dtb" or "bcm2708-rpi-b-plus.dtb" depending on your Raspberry Pi type.
+device_tree_param=i2c1=on
+device_tree_param=spi=on
+
+reboot
+```
+
 ##Use USB adapter instead of default audio output (optional)
 
-"Since the built-in audio out of the raspberry pi is only good for deaf people, it makes sense to remove it. Raspbian has a sysem that makes any usb audio the default one but arch linux doesn’t. Since we want it to work with anything we would plug into it, we’ll just get rid of the bcm2835 so it doesn’t get in our way. To do so, edit the file /etc/modules-load.d/raspberrypi.conf and remove / comment (use a #) the bcm2835 related modules (bcm2708-rng, snd-bcm2835)"
+"Since the built-in audio out of the raspberry pi is only good for deaf people, it makes sense to remove it. Raspbian has a sysem that makes any usb audio the default one but arch linux doesn’t. Since we want it to work with anything we would plug into it, we’ll just get rid of the bcm2835 so it doesn’t get in our way. To do so, edit the file ``` nano /etc/modules-load.d/raspberrypi.conf``` and remove / comment (use a #) the bcm2835 related modules (bcm2708-rng, snd-bcm2835)"
 
 From [here](http://www.marc-nostromo.com/installing-archlinux-on-raspberry-pi-for-headless-audio/)
 
@@ -112,3 +125,4 @@ Consult my [gist](https://gist.github.com/yeokm1/8b0ffc03e622ce011010). Volume c
 2. [i2c setup on Arch Linux](http://cfedk.host.cs.st-andrews.ac.uk/site/?q=2013-pi)
 3. [3D case design](http://www.thingiverse.com/thing:101837)
 4. [Headless audio for Raspberry Pi](http://www.marc-nostromo.com/installing-archlinux-on-raspberry-pi-for-headless-audio/)
+5. [Enable i2c on Arch Linux](http://archlinuxarm.org/forum/viewtopic.php?f=31&t=8330)
