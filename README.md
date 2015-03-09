@@ -18,7 +18,7 @@ Problems of my FM radio set at my house's living room
 Currently selected station and volume level. With a 3D printed case.
 
 ![Screen](/photos/muted.jpg)
-The older model using Raspberry Pi 1 B+. Muting is possible by pressing the "Select" button. Old picture of the previous blue case.
+The older model using Raspberry Pi 1 Model B. Muting is possible by pressing the "Select" button. Old picture of the previous blue case.
 
 ![Screen](/photos/ipaddress.jpg)
 Hate the complication of configuring static IP address and remembering it. Just get it to display on demand! Useful for SSH purposes. Old picture of the previous blue case.
