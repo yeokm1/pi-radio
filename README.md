@@ -123,6 +123,8 @@ Consult my [gist](https://gist.github.com/yeokm1/8b0ffc03e622ce011010). Volume c
 
 1. [Adafruit Char Plate LCD](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/overview)
 2. [i2c setup on Arch Linux](http://cfedk.host.cs.st-andrews.ac.uk/site/?q=2013-pi)
-3. [3D case design](http://www.thingiverse.com/thing:101837)
-4. [Headless audio for Raspberry Pi](http://www.marc-nostromo.com/installing-archlinux-on-raspberry-pi-for-headless-audio/)
-5. [Enable i2c on Arch Linux](http://archlinuxarm.org/forum/viewtopic.php?f=31&t=8330)
+3. [Rpi 1 Model B 3D case design](http://www.thingiverse.com/thing:101837)
+4. [Rpi 2 Model B 3D case top](http://www.thingiverse.com/thing:588608)
+5. [Rpi 2 Model B 3D case bottom](http://www.thingiverse.com/thing:582366)
+5. [Headless audio for Raspberry Pi](http://www.marc-nostromo.com/installing-archlinux-on-raspberry-pi-for-headless-audio/)
+6. [Enable i2c on Arch Linux](http://archlinuxarm.org/forum/viewtopic.php?f=31&t=8330)
