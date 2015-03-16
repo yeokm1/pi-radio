@@ -27,7 +27,8 @@ lcd = Adafruit_CharLCDPlate()
 stationIndex = 2  #I want to play my third station as default
 numStations = None
 
-
+#16 columns, 2 rows
+lcd.begin(16, 2)
 lcd.clear()
 
 
