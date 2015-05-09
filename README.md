@@ -63,8 +63,7 @@ On the latest versions of Arch Linux, it seems the i2c bus is disabled by defaul
 ```bash
 nano /boot/config.txt
 
-#Add/Uncomment the following lines
-#device_tree=bcm2709-rpi-2-b.dtb  #Replace this line with "bcm2708-rpi-b.dtb" or "bcm2708-rpi-b-plus.dtb" depending on your Raspberry Pi type.
+#Uncomment the following lines
 device_tree_param=i2c_arm=on
 device_tree_param=spi=on
 
